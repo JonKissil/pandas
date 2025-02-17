@@ -593,6 +593,7 @@ class MultiIndex(Index):
             arrays = list(lib.to_object_array_tuples(tuples).T)
         else:
             arrs = zip_longest(*tuples, fillvalue=np.nan)
+            #arrs = zip(*tuples)
             arrays = cast(list[Sequence[Hashable]], arrs)
 
         return cls.from_arrays(arrays, sortorder=sortorder, names=names)
