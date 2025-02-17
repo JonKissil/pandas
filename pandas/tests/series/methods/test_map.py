@@ -607,7 +607,7 @@ def test_map_kwargs():
 
 def test_map_dict_different_num_keys():
     # GH 60695
-    expected = pd.Series({("level 0", np.NaN): "val", ("level 0", "level 1"): "val"})
+    expected = pd.Series({("level 0", np.nan): "val", ("level 0", "level 1"): "val"})
     result = pd.Series({("level 0",): "val", ("level 0", "level 1"): "val"})
 
     tm.assert_series_equal(expected, result, check_names=False)
